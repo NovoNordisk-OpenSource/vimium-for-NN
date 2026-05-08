@@ -1,19 +1,10 @@
-# Vimium - The Hacker's Browser
+# Vimium (Novo Nordisk)
 
-Vimium is a browser extension that provides keyboard-based navigation and control of the web in the
-spirit of the Vim editor.
+Internal Novo Nordisk build of [Vimium](https://github.com/philc/vimium), the keyboard-based browser
+navigation extension.
 
-[Watch the demo video](https://www.youtube.com/watch?v=t67Sn0RGK54).
-
-**Installation instructions:**
-
-- Chrome:
-  [Chrome web store](https://chromewebstore.google.com/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb)
-- Edge:
-  [Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/vimium/djmieaghokpkpjfbpelnlkfgfjapaopa)
-- Firefox: [Firefox Add-ons](https://addons.mozilla.org/en-GB/firefox/addon/vimium-ff/)
-
-To install from source, see [here](CONTRIBUTING.md#installing-from-source).
+This fork is hardcoded to be completely disabled on `*.novonordisk.com` domains — no content scripts
+are injected and no code executes on those pages.
 
 Vimium's Options page can be reached via a link on the help dialog (type `?`) or via the button next
 to Vimium on the extension pages of Chrome and Edge (`chrome://extensions`), or Firefox
@@ -63,7 +54,7 @@ Using find:
     N       cycle backward to the previous find match
 
 For advanced usage, see [regular expressions](https://github.com/philc/vimium/wiki/Find-Mode) on the
-wiki.
+upstream wiki.
 
 Navigating your history:
 
@@ -167,17 +158,8 @@ keyboard.
 
 - [FAQ](https://github.com/philc/vimium/wiki/FAQ)
 - [Command listing](https://vimium.github.io/commands/)
-- [Vimium's GitHub wiki](https://github.com/philc/vimium/wiki): documentation for the more advanced
-  features.
-
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
-
-## Release Notes
-
-See [CHANGELOG](CHANGELOG.md) for the major changes in each release.
+- [Upstream Vimium wiki](https://github.com/philc/vimium/wiki): documentation for advanced features.
 
 ## License
 
-Copyright (c) Phil Crosby, Ilya Sukhar. See [MIT-LICENSE.txt](MIT-LICENSE.txt) for details.
+Based on Vimium by Phil Crosby and Ilya Sukhar. See [MIT-LICENSE.txt](MIT-LICENSE.txt) for details.
