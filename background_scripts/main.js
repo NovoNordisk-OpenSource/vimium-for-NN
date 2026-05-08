@@ -486,7 +486,8 @@ function selectTab(direction, { count, tab }) {
   });
 }
 
-chrome.webNavigation.onCommitted.addListener(async ({ tabId, frameId }) => {
+chrome.webNavigation.onCommitted.addListener(async ({ tabId, frameId, url }) => {
+  if (url && /^https?:\/\/[^/]*\.novonordisk\.com/.test(url)) return;
   // Vimium can't run on all tabs (e.g. chrome:// URLs). insertCSS will throw an error on such tabs,
   // which is expected, and noise. Swallow that error.
   const swallowError = () => {};
@@ -865,6 +866,7 @@ async function injectContentScriptsAndCSSIntoExistingTabs() {
 
   const tabs = await chrome.tabs.query({ status: "complete" });
   for (const tab of tabs) {
+    if (tab.url && /^https?:\/\/[^/]*\.novonordisk\.com/.test(tab.url)) continue;
     const target = { tabId: tab.id, allFrames: true };
 
     // Inject all of our content javascripts.

@@ -45,6 +45,9 @@
       "matches": [
         "<all_urls>"
       ],
+      "exclude_matches": [
+        "*://*.novonordisk.com/*"
+      ],
       "js": [
         "lib/types.js",
         "lib/utils.js",
