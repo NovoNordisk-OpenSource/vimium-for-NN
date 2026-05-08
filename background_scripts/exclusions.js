@@ -55,7 +55,12 @@ function getRule(url, rules) {
   }
 }
 
+const hardcodedExclusions = [/^https?:\/\/[^/]*\.novonordisk\.com/];
+
 export function isEnabledForUrl(url) {
+  if (hardcodedExclusions.some((re) => re.test(url))) {
+    return { isEnabledForUrl: false, passKeys: "" };
+  }
   const rule = getRule(url);
   return {
     isEnabledForUrl: !rule || (rule.passKeys.length > 0),
